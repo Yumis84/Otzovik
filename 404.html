@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Страница не найдена — Отзыв.com</title>
+<meta name="description" content="Запрошенная страница не найдена на Отзыв.com.">
+<meta name="robots" content="noindex,follow">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#101828;background:#f7f8fa;line-height:1.55}a{color:inherit}.wrap{width:min(760px,calc(100% - 28px));min-height:calc(100vh - 90px);margin:0 auto;padding:34px 0 70px}.logo{display:inline-block;font-size:24px;font-weight:900;text-decoration:none;margin-bottom:38px}.logo span{font-weight:500;color:#667085}.card{background:#fff;border:1px solid #e5e7eb;border-radius:22px;padding:clamp(24px,5vw,42px)}.code{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#667085}h1{font-size:clamp(38px,7vw,62px);line-height:1;letter-spacing:-.05em;margin:12px 0 16px}.lead{color:#667085;font-size:18px;margin:0 0 28px}.search{display:flex;gap:10px;margin-bottom:10px}.search input{min-width:0;flex:1;padding:14px;border:1px solid #d0d5dd;border-radius:12px;font:inherit}.search button,.primary{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border:1px solid #101828;border-radius:12px;background:#101828;color:#fff;font:inherit;font-weight:750;text-decoration:none;cursor:pointer}.status{min-height:24px;color:#667085;font-size:14px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.secondary{display:inline-flex;align-items:center;min-height:50px;padding:0 18px;border:1px solid #d0d5dd;border-radius:12px;text-decoration:none;font-weight:700}.footer{width:min(760px,calc(100% - 28px));margin:0 auto;padding:0 0 30px;color:#667085;font-size:13px;text-align:center}.footer a{color:inherit}@media(max-width:560px){.search{display:grid}.search button{width:100%}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<a class="logo" href="https://отзыв.com/">отзыв<span>.com</span></a>
+<section class="card">
+<div class="code">Ошибка 404</div>
+<h1>Страница не найдена</h1>
+<p class="lead">Возможно, адрес изменился или был введён с ошибкой. Найдите доступный профиль компании или вернитесь на главную.</p>
+<form class="search" id="companySearch">
+<input id="companySearchInput" aria-label="Поиск компании" placeholder="Например, Ортомедия" list="companySuggestions" autocomplete="off">
+<datalist id="companySuggestions"><option value="Ортомедия"></option></datalist>
+<button type="submit">Найти</button>
+</form>
+<div class="status" id="searchStatus" role="status" aria-live="polite">Сейчас доступен первый профиль: «Ортомедия».</div>
+<div class="actions">
+<a class="primary" href="https://отзыв.com/">На главную</a>
+<a class="secondary" href="https://отзыв.com/add/">Добавить компанию</a>
+</div>
+</section>
+</main>
+<footer class="footer"><a href="https://отзыв.com/about/">О проекте</a> · <a href="https://отзыв.com/methodology/">Методология</a> · <a href="https://отзыв.com/privacy/">Конфиденциальность</a> · <a href="https://отзыв.com/terms/">Условия</a> · <a href="https://отзыв.com/contacts/">Контакты</a></footer>
+<script>
+document.getElementById("companySearch").addEventListener("submit",function(event){
+event.preventDefault();
+const value=document.getElementById("companySearchInput").value.trim().toLowerCase().replace(/ё/g,"е");
+const status=document.getElementById("searchStatus");
+if(value==="ортомедия"||value==="ortomediya"||value.includes("ортомед")){
+window.location.href="https://ortomediya.отзыв.com/";
+return;
+}
+status.textContent=value?"Компания пока не найдена. Проверьте название или предложите добавить её.":"Введите название компании.";
+});
+</script>
+</body>
+</html>
